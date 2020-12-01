@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Healthy!</title>
+	<link rel="stylesheet" href="styles/main.css">
+	
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    
+</head>
+
+<body>
+    
+    <header>
+        <div class="login">
+        <a href="sign.html">login</a><a href="reg.html">/sign up</a>
+        </div>
+        
+        
+        <div class="logo">
+        <a><img src="images/plogo.png" alt="logo"></a>
+        </div>
+
+        <div class="title">
+        <h2>Wants been Healthy?</h2>
+        <h3>There you Go!</h3>
+        </div>
+    
+    
+    </header>
+    
+    
+    <nav class="topnav" id="myTopnav">
+      <a href="index.html" class="active">Home</a>
+      <a href="products.html">Eating</a>
+      <a href="#news">Exercise</a>
+      <div class="dropdown">
+        <button class="dropbtn">Join us 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="reg.html">register</a>
+          <a href="sign.html">sign up</a>
+        </div>
+      </div> 
+        
+      <a href="#about">Lifestyle</a>
+        
+      <input type="search" name="searchfield" id="searchfield" placeholder="Search...">
+      <input type="button" name="searchbutton" id="searchbutton" value="Go">
+        
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        
+      <script>
+        
+        function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+        </script>
+        
+        
+    </nav>
+    
+    <div class="registermain">
+        <div class="signimg">
+            <img src="images/plogo.png" alt="plogo"></div>
+        <h1>Register Page</h1>
+        
+        <form action="" autocomplete="off">
+            
+                <div class="inputs">
+                <div>
+                <label for="firstName">First Name:
+                <input type="text" id="firstName" name="firstName" ></label>
+                <span id="firstName_error">*</span><br>
+                </div>
+                
+                <div>
+                <label for="lastName">Last Name:
+                <input type="text" id="lastName" name="lastName" > </label>
+                <span id="lastName_error">*</span><br>
+                </div>
+                
+                <div>
+                <label for="email">E-mail:
+                <input type="email" id="email" name="email" > </label>
+                <span id="email_error">*</span><br>
+                </div>
+                    
+                <div>
+                <label for="address">Address:
+                <input type="text" id="address" name="address" > </label>
+                <span id="address_error">*</span><br>
+                </div>
+                
+                <div>
+                <label for="Phone">Phone: 
+                <input type="tel" id="Phone" name="Phone" maxlength="12"> </label>
+                <span id="Phone_error">*</span><br>
+                </div>
+                
+                <!--<<div>
+                    <label for="file">Upload Information:
+                    <input type="file" name="file" id="file"></label> 
+                    </div>>-->
+                    
+                
+                
+                
+                
+                
+                <div class="btns">
+                <input type="button" id="btnsub" value="Submit">
+                
+                <input type="reset" name="reset" id="reset" value="reset">
+                </div>
+                <script>
+                    var $ = function (id) {
+                        return document.getElementById(id);
+                    };
+                    var Reserve = function () {
+                        var email = $("email").value;
+                        var address = $("address").value;
+                        var firstName = $("firstName").value;
+                        var lastName = $("lastName").value;
+                        var Phone = $("Phone").value;
+                        
+
+
+                
+                        
+                if (address === "") { 
+                    $("address_error").innerHTML = "This field is required.";
+                    isValid = false;
+                } else if (firstLetterCapital(address)===false) {
+                    $("address_error").innerHTML = "Must start with a capital letter.";
+                    isValid = false;
+                } else {
+                    $("address_error").innerHTML = "";
+                } 
+    
+                if (firstName === "") { 
+                    $("firstName_error").innerHTML = "This field is required.";
+                    isValid = false;
+                } else if (firstLetterCapital(firstName)===false) {
+                    $("firstName_error").innerHTML = "Must start with a capital letter.";
+                    isValid = false;
+                } else {
+                    $("firstName_error").innerHTML = "";
+                } 
+
+
+
+                if (lastName === "") {
+                    $("lastName_error").innerHTML  = "This field is required.";
+                    isValid = false;
+                } else if (firstLetterCapital(lastName) === false) {
+                    $("lastName_error").innerHTML  = "Must start with a capital letter.";
+                    isValid = false;
+                } else {
+                    $("lastName_error").innerHTML  = "";
+                }
+
+                if (email === "") {
+                    $("email_error").innerHTML  = "This field is required.";
+                    isValid = false;
+                } else if (emailValidation(email) === false) {
+                    $("email_error").innerHTML  = "Invalid email address";
+                    isValid = false;
+                } else {
+                    $("email_error").innerHTML  = "";
+                }
+
+                if (Phone === "") {
+                    $("Phone_error").innerHTML  = "This field is required.";
+                    isValid = false;
+                } else if (phoneValidation(Phone) === false) {
+                    $("Phone_error").innerHTML  = "Phone number has non numerics.";
+                    isValid = false;
+                } else {
+                    $("Phone_error").innerHTML  = "";
+                }
+
+
+                function firstLetterCapital(name) {
+                    var letter = name[0];
+                    if (letter !== letter.toUpperCase()) {
+                        return false;
+                    }
+                    return true;
+                }
+
+                function phoneValidation(phoneNo) {
+                    var numbers = "0123456789";
+                    for (i = 0; i < phoneNo.length; i++) {
+                        if (numbers.indexOf(phoneNo.charAt(i)) === -1) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+
+                function emailValidation(email) {
+                    var lastapos = email.lastIndexOf("@");
+                    var apos = email.indexOf("@");
+                    var dotpos = email.lastIndexOf(".");
+                    if (apos < 1 || dotpos - apos < 2) {
+                        return false;
+                    } else if (email.length === dotpos + 1) {
+                        return false;
+                    } else if (apos !== lastapos) {
+                        return false;
+                    }
+                    return true;
+                }
+
+
+
+                
+
+                if (isValid) {
+                    $("what_is_this").submit();
+                }
+            };
+
+            window.onload = function () {
+                $("btnsub").onclick = Reserve;
+                $("firstName").focus();
+            };
+
+
+            </script>
+             </div>   
+            
+
+            </form>
+
+            </div>
+
+
+            
+    
+    <footer>
+    <div>
+        <h2>Nav links</h2>
+        <ul class="footerlist">
+            <li><a href="products.html">Eating</a></li>
+            <li><a href="#">Exercise</a></li>
+            <li><a href="#">Join us</a></li>
+            <li><a href="#">Lifestyle</a></li>
+            </ul>
+        </div>
+        
+        <div>
+            <h2>Digital Clock</h2>    
+
+            <span id="clock"></span>  
+            <script>
+
+
+            // Define a function to display the current time
+            function displayTime() {
+                let clock = document.querySelector("#clock"); 
+                let now = new Date();                         
+                clock.textContent = now.toLocaleTimeString(); 
+            }
+            displayTime()                    
+            setInterval(displayTime, 1000);  
+
+            </script>
+        
+        </div>
+        
+        
+        <div >
+        <h2>Follow us</h2>
+            <ul class="footerimg">
+            <li><a href="#f3"><img src="images/youtube.png" alt="youtube"></a></li>
+            <li><a href="#f3"><img src="images/facebook.png" alt="facebook"></a></li>
+            <li><a href="#f3"><img src="images/twitter.png" alt="twitter"></a></li>
+                </ul>
+        </div>
+        
+        <div class="end"><p>© 2020/11/18</p></div>
+    
+    </footer>
+
+    
+    
+  
+   
+</body>
+</html>
+
+
+
+

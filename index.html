@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Healthy!</title>
+	<link rel="stylesheet" href="styles/main.css">
+	
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    
+</head>
+
+<body>
+    
+    <header>
+        <div class="login">
+        <a href="sign.html">login</a><a href="reg.html">/sign up</a>
+        </div>
+        
+        
+        <div class="logo">
+        <a><img src="images/plogo.png" alt="logo"></a>
+        </div>
+
+        <div class="title">
+        <h2>Wants been Healthy?</h2>
+        <h3>There you Go!</h3>
+        </div>
+    
+    
+    </header>
+    
+    
+   <nav class="topnav" id="myTopnav">
+      <a href="index.html" class="active">Home</a>
+      <a href="products.html">Eating</a>
+      <a href="#news">Exercise</a>
+      <div class="dropdown">
+        <button class="dropbtn">Join us 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="reg.html">register</a>
+          <a href="sign.html">sign up</a>
+        </div>
+      </div> 
+        
+      <a href="#about">Lifestyle</a>
+        
+      <input type="search" name="searchfield" id="searchfield" placeholder="Search...">
+      <input type="button" name="searchbutton" id="searchbutton" value="Go">
+        
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        
+      <script>
+        
+        function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+        </script>
+        
+        
+    </nav>
+    
+    <div class="main">
+        <div class="drinkimg">
+        <img src="images/pimg.png" alt="energydrink">
+
+    </div>
+    
+    <h2 >The Sports Equipments:</h2>
+    
+    
+    
+    
+    <div>
+    
+    
+        <div class="productlist">
+        
+            <ul id="image_list">
+                    <li><a href="images/e1.jpg" title="Treadmill">
+
+                        </a></li>
+
+                    <li><a href="images/e2.jpg" title="Barbell">
+
+                        </a></li>
+
+                    <li><a href="images/e3.png" title="Sports Equipment">
+
+                        </a></li>
+
+                </ul>
+
+                <div class="product"><img id="main_image" src="images/e3.png" alt="Sports Equipment"></div>
+                <h3 id="caption">Sports Equipment</h3>    
+
+        
+        <script>
+            const $ = selector => document.querySelector(selector);
+
+            document.addEventListener("DOMContentLoaded", () => {
+
+                const caption = $("#caption");        
+                const mainImage = $("#main_image");   
+
+                
+                const links = $("#image_list").querySelectorAll("a");
+
+                
+                const imageCache = [];
+                let image = null;
+                for ( let link of links ) {
+                    
+                    image = new Image();
+                    image.src = link.href;
+                    image.alt = link.title;
+                    
+                    imageCache[imageCache.length] = image;
+                }
+
+                
+                let imageCounter = 0;
+                setInterval( () => { 
+                    
+                    imageCounter = (imageCounter + 1) % imageCache.length;
+                    
+                    image = imageCache[imageCounter];
+                    
+                    mainImage.src = image.src;
+                    mainImage.alt = image.alt;
+                    caption.textContent = image.alt;
+                },
+                3500);  
+            });
+            </script>
+            
+            
+    </div>
+        
+        
+        
+        
+        
+        
+    
+    
+    </div>
+    
+    
+    <div class="products">
+    
+        <div class="edrink">
+        <img src="images/e1.jpg" alt="Treadmill">
+        <h3>Treadmill</h3>
+        <button><i class="fas fa-eye eyeIcon"></i>View more</button>
+        
+        
+        </div>
+        
+        <div class="edrink">
+        <img src="images/e2.jpg" alt="Barbell">
+        <h3>Barbell</h3>
+        <button><i class="fas fa-eye eyeIcon"></i>View more</button>
+        
+        </div>
+        
+        <div class="edrink">
+        <img src="images/e3.png" alt="Sports Equipment">
+        <h3>Sports Equipment</h3>
+        <button><i class="fas fa-eye eyeIcon"></i>View more</button>
+        </div>
+    
+    </div>
+    </div>
+    
+    <footer>
+    <div>
+        <h2>Nav links</h2>
+        <ul class="footerlist">
+            <li><a href="products.html">Eating</a></li>
+            <li><a href="#">Exercise</a></li>
+            <li><a href="#">Join us</a></li>
+            <li><a href="#">Lifestyle</a></li>
+            </ul>
+        </div>
+        
+        <div>
+            <h2>Digital Clock</h2>    
+
+            <span id="clock"></span>  
+            <script>
+
+
+            // Define a function to display the current time
+            function displayTime() {
+                let clock = document.querySelector("#clock"); 
+                let now = new Date();                         
+                clock.textContent = now.toLocaleTimeString(); 
+            }
+            displayTime()                    
+            setInterval(displayTime, 1000);  
+
+            </script>
+        
+        </div>
+        
+        
+        <div >
+        <h2>Follow us</h2>
+            <ul class="footerimg">
+            <li><a href="#f3"><img src="images/youtube.png" alt="youtube"></a></li>
+            <li><a href="#f3"><img src="images/facebook.png" alt="facebook"></a></li>
+            <li><a href="#f3"><img src="images/twitter.png" alt="twitter"></a></li>
+                </ul>
+        </div>
+        
+        <div class="end"><p>© 2020/11/18</p></div>
+    
+    </footer>
+
+    
+    
+  
+   
+</body>
+</html>
