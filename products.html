@@ -108,6 +108,79 @@
         </div>
     
     </div>
+        
+        
+         <div class="registermain">
+        <div class="signimg">
+            <img src="images/plogo.png" alt="plogo"></div>
+        <h1>Add Product</h1>
+        
+        <form action="" autocomplete="off">
+            
+                <div class="inputs">
+                <div>
+                <label for="name">Title:
+                <input type="text" id="name" name="name" ></label>
+                <span id="name_error">*</span><br>
+                </div>
+                
+                <div>
+                <label for="file">Image:
+                <input type="file" id="file" name="file" > </label>
+                </div>
+                
+                
+                
+                
+                
+                    
+                <div><input type="button" value="submit" id="btnsub" onclick="myFunction()"></div>
+                
+                <!--<<div>
+                    <label for="file">Upload Information:
+                    <input type="file" name="file" id="file"></label> 
+                    </div>>-->
+                    
+                
+                    <script>
+                        var $ = function (id) {
+                        return document.getElementById(id);
+                    };
+                        function myFunction(){
+                        var name = $("name").value;
+                        var file = $("file").value;
+                        
+                            const ADDP = document.querySelector(".products");
+                            
+                        
+                        var add = document.createElement("div");
+                        var addh1 = document.createElement("h3");
+                        var addimgs = document.createElement("img");
+                            addimgs.innerHTML=file;
+                            addh1.append(name);
+                            
+                            add.appendChild(addimgs);
+                            add.appendChild(addh1);
+                        ADDP.append(add);
+                            
+                        }
+                       
+                    </script>
+                
+                
+                
+             </div>   
+            
+
+            </form>
+
+            </div>
+        
+        
+        
+        
+        
+        
     </div>
     
     <footer>
