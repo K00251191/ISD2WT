@@ -111,14 +111,46 @@
                 <input type="tel" id="Phone" name="Phone" maxlength="12"> </label>
                 <span id="Phone_error">*</span><br>
                 </div>
+                    
+                <div>
+                <label for="password">Password:
+					<div id="pwdWrap">
+						<input type="password" id="password" name="password">
+						<i class="fas fa-eye eyeIcon"></i>
+					</div>
+                    </label>
+                <span id="password_error">*</span><br>
+                    </div>
                 
+                    
+                    
+                    
                 <!--<<div>
                     <label for="file">Upload Information:
                     <input type="file" name="file" id="file"></label> 
                     </div>>-->
                     
                 
-                
+                <script>
+                        const visToggle = document.querySelector('.eyeIcon');
+       
+                        const input = document.querySelector('#pwdWrap input');
+
+                        var password = true; 
+
+                        visToggle.addEventListener('click', function(){
+                            if (password) { 
+                               input.setAttribute('type','text'); 
+                                visToggle.classList.remove('fa-eye'); 
+                                visToggle.classList.add('fa-eye-slash');
+                            } else { 
+                                input.setAttribute('type','password');
+                                visToggle.classList.remove('fa-eye-slash');
+                                visToggle.classList.add('fa-eye'); 
+                            }
+                            password = !password; 
+                        });
+                </script>
                 
                 
                 
@@ -137,10 +169,15 @@
                         var firstName = $("firstName").value;
                         var lastName = $("lastName").value;
                         var Phone = $("Phone").value;
-                        
+                        var password = $("password").value;
 
 
-                
+                if (password === "") { 
+                    $("password_error").innerHTML = "This field is required.";
+                    isValid = false;
+                } else {
+                    $("password_error").innerHTML = "";
+                } 
                         
                 if (address === "") { 
                     $("address_error").innerHTML = "This field is required.";
