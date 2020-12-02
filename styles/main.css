@@ -328,9 +328,14 @@ input#password {
 
 .signimg img{margin-left: 14em;border-radius: 6px;}
 
+.registermain h4{ text-align: center;width:70%;}
+
+.registermain p{text-align: center;margin-left: -3em;}
 
 
+.registermain .common{margin-top:  1.5em;font-size: 0.8em;}
 
+.registermain .common a{text-decoration: none;color:blue;}
 
 footer div{margin: auto;}
 

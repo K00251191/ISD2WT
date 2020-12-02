@@ -74,41 +74,73 @@
         
     </nav>
     
-    <div class="productmain">
+    <div class="registermain">
+        <div class="signimg">
+            <img src="images/plogo.png" alt="plogo"></div>
+        <h1>Calculate BMI</h1>
         
-    
-    <h2>Diet Suggestions</h2>
-    
-    
-    
-    
-    
-    
-    <div class="products">
-    
-        <div class="edrink">
-        <img src="images/d1.png" alt="diet1">
-        <h3>Taco Diet</h3>
-        <button><i class="fas fa-eye eyeIcon"></i>View more</button>
-        
-        
-        </div>
-        
-        <div class="edrink">
-        <img src="images/d2.png" alt="diet2">
-        <h3>Disassoclated Diet</h3>
-        <button><i class="fas fa-eye eyeIcon"></i>View more</button>
-        
-        </div>
-        
-        <div class="edrink">
-        <img src="images/d3.png" alt="diet3">
-        <h3>Wild Diet</h3>
-        <button><i class="fas fa-eye eyeIcon"></i>View more</button>
-        </div>
-    
-    </div>
-    </div>
+        <form action="" autocomplete="off">
+            
+                <div class="inputs">
+                <div>
+                <label for="weight">Weight:
+                <input type="tel" id="weight" name="weight" ></label>
+                <span id="weight_error">*</span><br>
+                </div>
+                
+                <div>
+                <label for="height">Height:
+                <input type="tel" id="height" name="height" > </label>
+                <span id="height_error">*</span><br>
+                </div>
+                
+                
+                
+                <div><h4>Your BMI is: <span id="out">?</span></h4></div>
+                
+                    
+                <div><input type="button" value="submit" id="btnsub" onclick="myFunction()"></div>
+                
+                <!--<<div>
+                    <label for="file">Upload Information:
+                    <input type="file" name="file" id="file"></label> 
+                    </div>>-->
+                    
+                
+                    <script>
+                        var $ = function (id) {
+                        return document.getElementById(id);
+                    };
+                        function myFunction(){
+                        var weight = $("weight").value;
+                        var height = $("height").value;
+                        
+                       
+                        
+                        
+                        
+                        
+                        var BMI = weight/(height*height);
+                        console.log(BMI);
+                        const bmi=BMI;
+                        BMI = (BMI).toFixed(2);
+                        
+                        document.getElementById("out").innerHTML=BMI;
+                        }
+                       
+                    </script>
+                
+                
+                
+             </div>   
+            
+
+            </form>
+
+            </div>
+
+
+            
     
     <footer>
     <div>
@@ -162,9 +194,6 @@
    
 </body>
 </html>
-
-
-
 
 
 
